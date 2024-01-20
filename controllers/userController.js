@@ -1,7 +1,7 @@
 const { Course, Student } = require('../models');
 
 module.exports = {
-  // Get all courses
+  // Get all user
   async getCourses(req, res) {
     try {
       const courses = await Course.find();
