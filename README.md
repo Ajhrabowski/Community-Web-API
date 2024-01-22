@@ -20,7 +20,7 @@ Read more about MIT here:
 
 This is a project assignment for my MSU Fullstack Web Development Bootcamp. My task was to build an API for a social network web application where users can share their thoughts, react to friends’ thoughts, and create a friend list.I used Express.js for routing, a MongoDB database, and the Mongoose ODM. In addition to using the Express.js and Mongoose packages, I used a day.js to format timestamps.
 
-https://drive.google.com/drive/u/2/home
+https://drive.google.com/file/d/1_y4TUaTnt6eDp_M8F5ngTuxelk33FJ1p/view?usp=sharing
 
 https://github.com/Ajhrabowski/Community-Web-API
 
