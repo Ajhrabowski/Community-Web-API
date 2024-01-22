@@ -8,22 +8,6 @@ const thoughtCount = async () => {
   return numberOfThoughts;
 }
 
-// // Aggregate function for getting the overall grade using $avg
-// const grade = async (thoughtId) =>
-//   Thought.aggregate([
-//     // only include the given thought by using $match
-//     { $match: { _id: new ObjectId(thoughtId) } },
-//     {
-//       $unwind: '$reactions',
-//     },
-//     {
-//       $group: {
-//         _id: new ObjectId(thoughtId),
-//         overallGrade: { $avg: '$reactions.score' },
-//       },
-//     },
-//   ]);
-
 module.exports = {
   // Get all thoughts
   async getThoughts(req, res) {
@@ -44,7 +28,7 @@ module.exports = {
   // Get a single thought
   async getSingleThought(req, res) {
     try {
-      const thought = await Thought.findOne({ _id: req.params.thoughttId })
+      const thought = await Thought.findOne({ _id: req.params.thoughtId })
         .select('-__v');
 
       if (!thought) {
@@ -53,7 +37,6 @@ module.exports = {
 
       res.json({
         thought,
-        grade: await grade(req.params.thoughtId),
       });
     } catch (err) {
       console.log(err);
@@ -66,6 +49,7 @@ module.exports = {
       const thought = await Thought.create(req.body);
       res.json(thought);
     } catch (err) {
+      console.log(err)
       res.status(500).json(err);
     }
   },
